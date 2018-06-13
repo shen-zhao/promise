@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body class='ddd'>
+    <script src="promise.js"></script>
+    <script src="fpromise.js"></script><!--这个是错的-->
+    <script src="promise-polyfill.js"></script>
+    <script src="new-promise-polyfill.js"></script>
+    <script>
+        // setTimeout(function() {
+        //     console.log('settimeout')
+        // },0)
+        // var promise = new Mpromise(function(res,rej) {
+        //     console.log(1)
+        //     setTimeout(function() {
+        //         res();
+        //     },0)
+        // }).then(function() {
+        //     console.log(2)
+        // }).then(function() {
+        //     console.log(3)
+        // })
+
+        new Newpromise(function(resolve) {
+            console.log('begin!')
+            setTimeout(function() {
+                console.log("1000");
+                resolve(2268133);
+            }, 1000)
+        })
+        .then(function(v) {
+            return new Newpromise(function(resolve) {
+                setTimeout(function() {
+                    console.log(v);
+                    console.log("2000");
+                    resolve(1000000000);
+                }, 2000);
+            });
+        })
+        .then(function(s) {
+            console.log(s);
+            console.log(3000);
+            return 'hahahaha';
+        })
+        .then(function(value) {
+            console.log(value)
+        });
+
+    </script>
+    
+</body>
+</html>
