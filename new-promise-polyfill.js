@@ -45,6 +45,7 @@ function Newpromise(fn) {
 
     function resolve(self, newValue) {
         if(newValue && (typeof newValue === 'function' || typeof newValue === 'object')) {
+            //当resolve传入一个promise或类promise||then return一个promise或类promise时
             var then = newValue.then;
             if(newValue instanceof Newpromise) {
                 self._state = 3;
@@ -52,6 +53,7 @@ function Newpromise(fn) {
                 finale(self);
                 return;
             } else if(typeof then === 'function') {
+                doResolve(then.bind(newValue), self)
                 return;
             }
         }

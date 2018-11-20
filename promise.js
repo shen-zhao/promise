@@ -4,7 +4,7 @@ function Mpromise(func) {
         value = null;
 
     this.then = function(onFulfilled) {
-        new Promise(function(resolve) {
+        new Mpromise(function(resolve) {
             handle({onFulfilled, resolve});
         });
     }

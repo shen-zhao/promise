@@ -5,3 +5,4 @@
     问题：then return Promise对象时未作处理
 
 - 参照[promise-polyfill](https://github.com/taylorhakes/promise-polyfill/blob/master/dist/polyfill.js)
+- [Promises/A+规范中文](http://www.ituring.com.cn/article/66566)
