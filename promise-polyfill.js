@@ -262,10 +262,10 @@
         throw new Error('unable to locate global object');
     })();
 
-    if (!globalNS.Promise) {
+    // if (!globalNS.Promise) {
         globalNS.Promise = Promise;
-    } else if (!globalNS.Promise.prototype['finally']) {
+    // } else if (!globalNS.Promise.prototype['finally']) {
         globalNS.Promise.prototype['finally'] = promiseFinally;
-    }
+    // }
 
 })));

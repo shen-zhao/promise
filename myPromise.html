@@ -10,22 +10,27 @@
 <script src="./myPromise.js"></script>
 <!-- <script src="./promise-polyfill.js"></script> -->
 <script>
-    // new MyPromise(function(resolve) {
-    //     console.log(111);
-    //     resolve();
-    // }).then(function() {
-    //     console.log(222);
-    //     JSON.parse('sadf')
-    // }).then(function() {
-    //     console.log(333);
-    // })
-
-    // console.log(444);
-
-
-    Promise.resolve(new Promise((resolve) => {resolve(111)})).then(function(value) {
-        console.log('value', value);
+    new MyPromise(function(resolve) {
+        console.log(111);
+        resolve();
+    }).then(function() {
+        console.log(222);
+        JSON.parse('sadf')
+    }).then(function() {
+        console.log(333);
+    }).then(function() {
+        console.log(444);
+    }).finally(function haha() {
+        console.log(555);
+    }).then((e) => {
+        console.log(e);
     });
+
+    console.log(666);
+
+    // Promise.resolve(new Promise((resolve) => {resolve(111)})).then(function(value) {
+    //     console.log('value', value);
+    // });
 </script>
     
 </body>
